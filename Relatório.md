@@ -1,15 +1,5 @@
 # Relatório - Aula 11 – Loops de repetição
 
-**Unidade Curricular:** Algoritmos e Programação  
-**Professor:** Alexandre (Montanha) de Oliveira  
----
-
-## Identificação da Dupla
-
-* **Integrante 1:** Lucca Fabrini — RA:
-* **Integrante 2:** Filipe Dutra Avancini — RA: 126221445536
-* **Data de Entrega:** 01/10/2026
-
 ## Parte 1: Análise da aula e respostas teóricas
 
 1. **Por que utilizamos laços de repetição?**
@@ -80,10 +70,18 @@ As listas encadeadas são organizadas de forma dividida dentro dos slots da mem�
 
 ![Desenho simples de exemplo](Assets/Screenshot_1.png)
 
---
+---
 
 3. **Por que inserir ou excluir elementos pode exigir operações diferentes nessas duas estruturas?**
 
+Porque a forma de distribuição dos dados de cada estrutura é diferente, em **listas encadeadas** você precisa apenas apagar o endereço que o dado anterior esta indicando, e em **arays** será necessário mover todos os dados quando um é apagado.
+
+---
+
 4. **Uma coleção chamada “lista” em uma linguagem é necessariamente uma lista encadeada? Pesquisem especificamente List de C# e Vec de Rust.**
+
+Não necessáriamente, pesquisando usando o Gemini.AI, descobrimos que existem **arrays dinâmicos**, 
+
+---
 
 5. **Para guardar os times e percorrê-los repetidamente, quais vantagens vocês identificam em uma estrutura baseada em array?**
