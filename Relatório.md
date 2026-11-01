@@ -322,7 +322,7 @@ Como foi corrigido: O erro foi resolvido navegando para o diretório correto atr
 
 ## Contribuição e principal aprendizado - Filipe Dutra
 
-Eu contribuí com a montagem do relatório, os desenhos e tabelas e com a criação dos códigos, o aprendizado que obtive com esse trabalho foi que a lógica dos programas não muda indepenednte da linguagem, as sintaxes mudam mas a lógica 
+Contribuí com a montagem do relatório, os desenhos e tabelas e com a criação dos códigos, o aprendizado que obtive com esse trabalho foi que a lógica dos programas não muda indepenednte da linguagem, as sintaxes mudam mas a lógica 
 permanece a mesma.
 
 ---
