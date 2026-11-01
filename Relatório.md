@@ -80,8 +80,244 @@ Porque a forma de distribuição dos dados de cada estrutura é diferente, em **
 
 4. **Uma coleção chamada “lista” em uma linguagem é necessariamente uma lista encadeada? Pesquisem especificamente List de C# e Vec de Rust.**
 
-Não necessáriamente, pesquisando usando o Gemini.AI, descobrimos que existem **arrays dinâmicos**, 
+Não necessáriamente, pesquisando usando o **Gemini**, descobrimos que existem **arrays dinâmicos**, blocos de memória adjacentes que se redimensionam automaticamente, o **CSharp** utiliza o **List<T>**, quando um **array** dinâmico de uma **List<T>** atinge seu limite de armazenamento, o **.NET** aloca um espaço de memória adjacente maior e copia o dados para lá.
+
+Já em **Rust** usamos o **Vec<T>**, é a **array dinãmica** equivalente em **Rust**, assim como no **CSharp** os dados ficam guardados em blocos de memória adjacentes, mas em **Rust** funciona um pouco diferente, os dados ficam armazenados em um **Heap**, um monte, é uma área de memória maior, mais livre e desestruturada, e também temos a **Stack*, uma pilha, funciona como uma pilha de pratos, o último prato que entra é o último a sair, ela guarda variáveis,  locais de funções, parâmetros de métodos, tipos primitivos como números inteiros e booleanos.
 
 ---
 
 5. **Para guardar os times e percorrê-los repetidamente, quais vantagens vocês identificam em uma estrutura baseada em array?**
+
+Em uma **array** temos a vantagem de saber exatamente a quatidade de espaços na memória que iremos útilizar, por exemplo; se pegarmos os times do Brasileirão 2026, temos 20 times, criamos então uma **array** com 20 espaços reservados, e desses espaços, sabemos exatamente o endereço de cada um, sem precisar passar por todos para descobrir o endereço do próximo, você pode percorrer toda a lista sem problemas.
+
+## Parte 3: Desafio prático — Gerador de confrontos
+
+1. Por que o array de Java exigiu a criação de outro array?
+
+Foi necessário criar outra array para mover os times da primeira lista para a segunda, já que uma array não permite alocar mais espaço quando já criada.
+
+2. O que ficou mais simples com *List<string>* e *Vec<String>?*
+
+Em CSharp e Rust, o processo de criar um novo array foi facilitado por conta das *array dinâmicas*, em *java* foi necessário criar uma nova *array* com espaço maior e copiar os dados para a nova *array*.
+
+3. A facilidade de adicionar um elemento significa que essas estruturas são listas encadeadas? Justifiquem com a pesquisa realizada.
+
+Não, essa facilidade se dá por que a lista dinâmica é um bloco reservado de memória adjacente, enquanto as listas encadeadas, são blocos de memória que para encontrar o proximo dado você precisa percorrer todos os outros primeiro.
+
+---
+
+## Parte 4: Comparação das sintaxes
+
+### Criar a coleção em java
+```java
+String[] times = {"Atlético-MG", "Cruzeiro", "América-MG", "Villa Nova"}
+```
+---
+### Criar a coleção em C#
+```C#
+List<string> times = new List<string> { "Atlético-MG", "Cruzeiro", "América-MG", "Villa Nova" }
+```
+---
+### Criar a coleção em Rust
+```Rust
+ let mut times = vec!["Atlético-MG", "Cruzeiro", "América-MG", "Villa Nova"]
+```
+---
+### Consultar a quantidade de elementos em java
+```java
+for (int i = 0; i < times.length; i++)
+```
+---
+### Consultar a quantidade de elementos em C# 
+```C#
+for (int i = 0; i < times.Count; i++)
+```
+---
+### Consultar a quantidade de elementos em Rust
+```Rust
+for i in 0..times.len()
+```
+---
+### Acessar um elemento pelo índice em java
+```java
+System.out.println(times[i] + " x " + times[j])
+```
+---
+### Acessar um elemento pelo índice em C#
+```C#
+Console.WriteLine($"{times[i]} x {times[j]}")
+```
+---
+### Acessar um elemento pelo índice em Rust
+```Rust
+println!("{} x {}", times[i], times[j]);
+```
+---
+### Escrever um laço para percorrer a coleção em Java
+```java
+for (int i = 0; i < times.length; i++) {
+        timesComTombense[i] = times[i];
+    }
+```
+---
+### Escrever um laço para percorrer a coleção em C#
+```C#
+for (int i = 0; i < times.Count; i++)
+```
+---
+### Escrever um laço para percorrer a coleção em Rust
+```Rust
+for i in 0..times.len() {
+        println!("[{}] {}", i, times[i]);
+    }
+```
+---
+### Escrever dois laços aninhados em Java
+```java
+ for (int i = 0; i < total; i++) {
+            for (int j = 0; j < total; j++) {
+                if (i != j) {
+                    System.out.println(times[i] + " x " + times[j]);
+                    totalDeJogos++; 
+                }
+            }
+        }
+```
+---
+### Escrever dois laços aninhados em C#
+```C#
+ for (int i = 0; i < times.Count; i++)
+            {
+                for (int j = 0; j < times.Count; j++)
+                {
+                    if (i != j)
+                    {
+                        Console.WriteLine($"{times[i]} x {times[j]}");
+                        totalIdaVolta++;
+                    }
+                }
+            }
+```
+---
+### Escrever dois laços aninhados em Rust
+```Rust
+ for i in 0..times.len() {
+        for j in (i + 1)..times.len() {
+            println!("{} x {}", times[i], times[j]);
+            total_turno_unico += 1;
+        }
+    }
+```
+---
+### Impedir confronto contra o próprio time em Java
+```java
+ if (i != j) {
+    System.out.println(times[i] + " x " + times[j]);
+        totalDeJogos++; 
+}
+```
+---
+### Impedir confronto contra o próprio time em C#
+```C#
+if (i != j)
+    {
+    Console.WriteLine($"{times[i]} x {times[j]}");
+        totalIdaVolta++;
+}
+```
+---
+### Impedir confronto contra o próprio time em Rust
+```Rust
+if i != j { 
+    println!("{} x {}", times[i], times[j]);
+        total_ida_volta += 1;
+}
+```
+---
+### Acrescentar o quinto time em Java
+```java
+System.out.println("Adicionando o Tombense");
+
+String[] timesComTombense = new String[5];
+    for (int i = 0; i < times.length; i++) {
+        timesComTombense[i] = times[i];
+    }
+
+    timesComTombense[4] = "Tombense";
+
+    for (int i = 0; i < timesComTombense.length; i++) {
+        System.out.println("[" + i + "] " + timesComTombense[i]);
+}
+```
+---
+### Acrescentar o quinto time em #
+```C#
+ Console.WriteLine("\nAdicionando o Tombense");
+    times.Add("Tombense"); 
+
+        Console.WriteLine("Nova lista de times com Tombense:");
+            for (int i = 0; i < times.Count; i++)
+            {
+                Console.WriteLine($"[{i}] {times[i]}");
+}
+```
+---
+### Acrescentar o quinto time em Rust
+```Rust
+println!("\nAdicionando o Tombense");
+    times.push("Tombense");
+
+    println!("Nova lista de times com Tombense:");
+    for i in 0..times.len() {
+        println!("[{}] {}", i, times[i]);
+}
+```
+---
+### O que mudou na escrita dos programas e o que permaneceu igual no raciocínio utilizado para resolver o problema?
+
+A mudança visível entre os programas foi as sintaxes de criação das arrays e impressão; String, List e Vec, e para impressão; println, WriteLine e println!  já a lógica de criação do código permanece a mesma para os três programas.
+
+---
+
+## Parte 4: Teste de mesa e validação
+
+![Desenho simples de exemplo](Assets/Screenshot_2.png)
+
+1. Por que a quantidade de combinações examinadas pode ser maior que a quantidade de jogos exibidos?
+
+Isso acontece quando o programa não tem a restrição de if para evitar que os times caiam contra eles mesmos, e isso aumenta a quantidade de jogos.
+
+2. O que acontece com a quantidade de confrontos quando acrescentamos um time?
+
+Cada equipa nova adiciona ao campeonato tantos jogos quantos os que já existiam anteriormente, por exemplo, passar de 4 para 5 equipas aumenta o turno único de 6 para 10 jogos, somando mais 4 partidas.
+
+3. As três linguagens produziram os mesmos jogos e totais? Caso contrário, identifiquem e corrijam a diferença.
+
+Sim. Independentemente da sintaxe mudar entre Java, C# e Rust, a lógica do codigo não mudou.
+
+---
+
+## Evidências de execução das três versões.
+
+### java
+![Desenho simples de exemplo](Assets/Java.png)
+
+### C#
+![Desenho simples de exemplo](Assets/CSharp.png)
+
+### Rust
+![Desenho simples de exemplo](Assets/Rust.png)
+
+---
+
+## Um erro encontrado e como foi corrigido.
+
+Erro encontrado: Ao tentar executar o programa em Rust, o terminal devolveu a mensagem error: could not find 'Cargo.toml'.
+
+Causa: O terminal do editor estava aberto na pasta raiz geral do projeto e não dentro da pasta específica Rust/.
+
+Como foi corrigido: O erro foi resolvido navegando para o diretório correto através do comando de mudança de pasta (cd Rust), permitindo que o cargo run localizasse o Cargo.toml e compilasse o código com sucesso.
+
+## Contribuição e principal aprendizado - Filipe Dutra
+
+Eu contribuí com a montagem do relatório, os desenhos e tabelas e com a criação dos códigos, a principal 
