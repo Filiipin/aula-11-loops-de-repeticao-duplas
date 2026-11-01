@@ -329,7 +329,7 @@ permanece a mesma.
 
 ## Contribuição e principal aprendizado - Lucca Fabrini
 
-
+Durante o desenvolvimento dos exercícios de laços de repetição, trabalhei junto na revisão e no ajuste dos códigos para garantir que tudo rodasse sem erros. Acompanhei a construção da lógica das repetições, ajudando a encontrar e corrigir falhas de sintaxe e pequenos bugs nos algoritmos. Além disso, fiz testes pontuais em cada script para validar os resultados e garantir que as saídas estivessem corretas.
 
 ---
 
