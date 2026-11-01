@@ -24,7 +24,7 @@
 
 2. Compile o código:
    ```Bash
-   javac Main.java
+   javac App.java
 
 3. Execute o programa:
    ```Bash
