@@ -6,7 +6,7 @@
 
 ## 👥 Integrantes da Dupla
 
-* **Integrante 1:** Lucca Fabrini — RA:
+* **Integrante 1:** Lucca Fabrini — RA: 126221445060
 * **Integrante 2:** Filipe Dutra Avancini — RA: 126221445536
 * **Data de Entrega:** 01/10/2026
 
