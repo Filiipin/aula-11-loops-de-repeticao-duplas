@@ -321,3 +321,5 @@ Como foi corrigido: O erro foi resolvido navegando para o diretório correto atr
 ## Contribuição e principal aprendizado - Filipe Dutra
 
 Eu contribuí com a montagem do relatório, os desenhos e tabelas e com a criação dos códigos, a principal 
+
+## Contribuição e principal aprendizado - Lucca Fabrini
