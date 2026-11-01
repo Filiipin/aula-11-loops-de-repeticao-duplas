@@ -318,8 +318,42 @@ Causa: O terminal do editor estava aberto na pasta raiz geral do projeto e não 
 
 Como foi corrigido: O erro foi resolvido navegando para o diretório correto através do comando de mudança de pasta (cd Rust), permitindo que o cargo run localizasse o Cargo.toml e compilasse o código com sucesso.
 
+---
+
 ## Contribuição e principal aprendizado - Filipe Dutra
 
-Eu contribuí com a montagem do relatório, os desenhos e tabelas e com a criação dos códigos, o aprendizado que obtive com esse trabalho foi que a lógica dos programas não muda indepenednte da linguagem, as sintaxes mudam mas a lógica permanece a mesma.
+Eu contribuí com a montagem do relatório, os desenhos e tabelas e com a criação dos códigos, o aprendizado que obtive com esse trabalho foi que a lógica dos programas não muda indepenednte da linguagem, as sintaxes mudam mas a lógica 
+permanece a mesma.
+
+---
 
 ## Contribuição e principal aprendizado - Lucca Fabrini
+
+
+
+---
+
+## Referências consultadas.
+
+Vídeo-aula; https://www.youtube.com/watch?v=JzwH1EVyO1Q; acessado em 2026.
+
+Livro: BHARGAVA, Aditya. Entendendo Algoritmos: um guia ilustrado para programadores e outros curiosos. Capítulo 2: Memória, Arrays e Listas Encadeadas; https://pt.scribd.com/document/690939877/Entendendo-Algoritmos-Aditya-Y-Bhargava#page=1; acessado em 2026.
+
+Repositórios do Montanha; 
+* Código Java: https://github.com/alexmontanha/JavaLoop; acessado em 2026.
+* Código C#: https://github.com/alexmontanha/CSharpLoop; acessado em 2026.
+* Código Rust: https://github.com/alexmontanha/rust_loop; acessado em 2026.
+
+---
+
+## Declaração de Uso de Inteligência Artificial
+
+### No desenvolvimento deste projeto e na elaboração da respetiva documentação, foi utilizada a ferramenta de Inteligência Artificial Gemini como assistente de apoio técnico e pedagógico. A ferramenta foi empregue das seguintes formas:
+
+* Apoio na Estruturação de Código: Auxílio na verificação da sintaxe e no desenvolvimento comparativo das soluções implementadas nas três linguagens utilizadas (Java, C# e Rust).
+
+* Esclarecimento de Conceitos Teóricos: Suporte na compreensão e formulação das respostas analíticas sobre crescimento quadrático de confrontos, estruturas de dados (arrays estáticos vs. vetores dinâmicos) e diferenças na manipulação de coleções.
+
+* Revisão e Organização do Relatório: Apoio na estruturação lógica das seções do relatório, incluindo a formatação do teste de mesa e a organização textual das evidências de execução.
+
+* Ressalta-se que todo o código gerado foi integralmente testado, validado e compreendido pelos autores, assumindo-se total responsabilidade pela exatidão, funcionamento e explicação final dos algoritmos apresentados.
